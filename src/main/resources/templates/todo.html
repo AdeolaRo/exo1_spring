@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>todo</title>
+</head>
+<body>
+    <h1> Détails de la liste </h1>
+
+    <hr>
+
+    <p th:if="${todos == null || todos.isEmpty()}"> Liste Vide !! </p>
+
+    <ol th:unless="${todos == null && todos.isEmpty()}">
+        <li th:each="t:${todos}"><span th:text="${t.getName()}"></span></li>
+    </ol>
+</body>
+</html>
